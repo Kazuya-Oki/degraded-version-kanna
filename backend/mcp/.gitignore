@@ -1,0 +1,38 @@
+# Go specific
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/vendor/
+/Godeps/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Binary output directories
+/bin/
+/dist/
+
+# Dependency directories
+/vendor/
+
+# Log files
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Build output
+/build/
+/mcp
+
+# Go workspace file
+go.work
