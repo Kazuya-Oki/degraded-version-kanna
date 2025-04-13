@@ -87,7 +87,7 @@ export default function Chat() {
 											const renderFormattedText = (text: string) => {
 												const parts = text.split(/(\*\*.*?\*\*)/g);
 												return parts.map((part, index) => {
-													if (part.startsWith('**') && part.endsWith('**')) {
+													if (part.startsWith("**") && part.endsWith("**")) {
 														// Extract text between ** and render as bold
 														const boldText = part.slice(2, -2);
 														// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

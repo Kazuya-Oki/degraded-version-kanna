@@ -1,9 +1,17 @@
-import React, { type ChangeEvent, type FormEvent, type KeyboardEvent, useRef, useEffect } from "react";
+import React, {
+	type ChangeEvent,
+	type FormEvent,
+	type KeyboardEvent,
+	useRef,
+	useEffect,
+} from "react";
 
 export type ChatInputFieldProps = {
 	input: string;
 	placeholder?: string;
-	handleInputChange: (e: ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>) => void;
+	handleInputChange: (
+		e: ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>,
+	) => void;
 	handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 };
 
@@ -19,7 +27,7 @@ export const ChatInputField = ({
 		const textarea = textareaRef.current;
 		if (textarea) {
 			// Reset height to auto to get the correct scrollHeight
-			textarea.style.height = 'auto';
+			textarea.style.height = "auto";
 			// Set the height to the scrollHeight
 			textarea.style.height = `${textarea.scrollHeight}px`;
 		}
@@ -38,14 +46,15 @@ export const ChatInputField = ({
 		return () => clearTimeout(timeoutId);
 	}, []);
 
-
 	const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
 		// If Enter is pressed with Command/Meta key, submit the form
 		if (e.key === "Enter" && e.metaKey) {
 			e.preventDefault();
 			const form = e.currentTarget.form;
 			if (form) {
-				form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+				form.dispatchEvent(
+					new Event("submit", { cancelable: true, bubbles: true }),
+				);
 			}
 		}
 	};
